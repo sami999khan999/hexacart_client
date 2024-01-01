@@ -8,20 +8,24 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const user = { _id: "u", role: "admin" };
+const user = { _id: "1", role: "admin" };
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  const logoutHandeler = () => {};
+
   return (
     <nav className="header">
-      <Link to={"/"}>Home</Link>
+      <Link onClick={() => setIsOpen(false)} to={"/"}>
+        HOME
+      </Link>
 
-      <Link to={"/search"}>
+      <Link onClick={() => setIsOpen(false)} to={"/search"}>
         <FaSearch />
       </Link>
 
-      <Link to={"/cart"}>
+      <Link onClick={() => setIsOpen(false)} to={"/cart"}>
         <FaShoppingBag></FaShoppingBag>
       </Link>
 
@@ -34,10 +38,14 @@ const Header = () => {
           <dialog open={isOpen}>
             <div>
               {user.role === "admin" && (
-                <Link to={"/admin/dashboard"}>Admin</Link>
+                <Link onClick={() => setIsOpen(false)} to={"/admin/dashboard"}>
+                  Admin
+                </Link>
               )}
-              <Link to={"/order"}>Order</Link>
-              <button>
+              <Link onClick={() => setIsOpen(false)} to={"/order"}>
+                Order
+              </Link>
+              <button onClick={logoutHandeler}>
                 <FaSignOutAlt />
               </button>
             </div>
