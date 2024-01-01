@@ -22,7 +22,7 @@ const discount = 20;
 const total = subtotal + tax + shippingCharges;
 
 const Cart = () => {
-  const [couponCode, setCouponCode] = useState<String>("");
+  const [couponCode, setCouponCode] = useState<string>("");
   const [isValidCouponCode, setIsValidCouponCode] = useState<boolean>(false);
 
   useEffect(() => {
