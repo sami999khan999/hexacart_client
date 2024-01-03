@@ -21,7 +21,7 @@ const Shipping = () => {
 
   return (
     <div className="shipping">
-      <button className="back-btn" onClick={() => navigate("./cart")}>
+      <button className="back-btn" onClick={() => navigate("/cart")}>
         <BiArrowBack />
       </button>
 
@@ -30,7 +30,7 @@ const Shipping = () => {
         <input
           required
           type="text"
-          placeholder="address"
+          placeholder="Address"
           name="address"
           value={shippingInfo.address}
           onChange={changeHandeler}
