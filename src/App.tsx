@@ -1,8 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import Loader from "./components/loader";
 import Header from "./components/header";
 import { Toaster } from "react-hot-toast";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "./firebase";
 
 // lazy loading
 const Home = lazy(() => import("./pages/home"));
@@ -33,6 +35,10 @@ const TransactionManagement = lazy(
 );
 
 const App = () => {
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {});
+  }, []);
+
   return (
     <Router>
       {/* Header  */}
