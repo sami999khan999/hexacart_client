@@ -33,12 +33,10 @@ const Login = () => {
         toast.success(res.data.message);
       } else {
         const error = res.error as FetchBaseQueryError;
-        console.log(error.data);
+
         const message = error.data as MessageResponse;
         toast.error(message.message);
       }
-
-      console.log(user);
     } catch (err) {
       toast.error("Sign In Failed");
     }

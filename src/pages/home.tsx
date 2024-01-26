@@ -1,8 +1,30 @@
 import { Link } from "react-router-dom";
 import ProductCard from "../components/product-card";
+import { useLatestProductsQuery } from "../redux/api/productAPI";
+import toast from "react-hot-toast";
+import { Skeleton } from "../components/loader";
+import { CartItem } from "../types/types";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/reducer/cartReducer";
 
 const Home = () => {
-  const addToCartHandeler = () => {};
+  const { data, isLoading, isError } = useLatestProductsQuery("");
+
+  const dispatch = useDispatch();
+
+  const addToCartHandeler = (cartItem: CartItem) => {
+    if (cartItem.stock < 1) {
+      return toast.error("Out of Stock");
+    }
+    dispatch(addToCart(cartItem));
+
+    toast.success("Added to Cart");
+  };
+
+  if (isError) {
+    toast.error("Cannot Fetch the Products");
+  }
+
   return (
     <div className="home">
       <section></section>
@@ -13,14 +35,21 @@ const Home = () => {
         </Link>
       </h1>
       <main>
-        <ProductCard
-          productId="i4g5ihrwkevis"
-          name="Gaming PC"
-          price={1299}
-          stock={28}
-          handeler={addToCartHandeler}
-          photo="https://m.media-amazon.com/images/I/81CFOwoLVlL._AC_SX466_.jpg?fbclid=IwAR2sbMsdh8rBAKomsURo-cFNsw4_Y9g8wU3bI0u4la25KdpvNc4cLYr4L1Y"
-        />
+        {isLoading ? (
+          <Skeleton width="80vw" />
+        ) : (
+          data?.products.map((i) => (
+            <ProductCard
+              productId={i._id}
+              key={i._id}
+              name={i.name}
+              price={i.price}
+              stock={i.stock}
+              handeler={addToCartHandeler}
+              photo={i.photo}
+            />
+          ))
+        )}
       </main>
     </div>
   );
