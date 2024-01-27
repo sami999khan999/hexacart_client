@@ -26,6 +26,8 @@
     width: 100%;
     flex: 1;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 1rem;
     overflow-x: auto;
 
@@ -52,7 +54,7 @@
     @include square(calc(18.75rem - 3rem));
     height: 12rem;
     width: 12rem;
-    object-fit: cover;
+    object-fit: contain;
     margin: 1rem;
   }
 
