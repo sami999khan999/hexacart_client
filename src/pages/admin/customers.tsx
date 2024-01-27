@@ -14,6 +14,7 @@ import {
 import { CustomError } from "../../types/api-types";
 import { responseToast } from "../../utils/features";
 import { UserReducerInitialState } from "../../types/reudcer-types";
+import { useNavigate } from "react-router-dom";
 
 interface DataType {
   avatar: ReactElement;
@@ -63,9 +64,11 @@ const Customers = () => {
 
   const [deleteUser] = useDeleteUserMutation();
 
+  const navigate = useNavigate();
+
   const deleteHandler = async (userId: string) => {
     const res = await deleteUser({ userId, adminUserId: user?._id! });
-    responseToast(res, null, "");
+    responseToast(res, navigate, "");
   };
 
   if (isError) {
