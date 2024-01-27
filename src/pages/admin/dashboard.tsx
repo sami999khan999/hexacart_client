@@ -9,13 +9,13 @@ import { BarChart, DoughnutChart } from "../../components/admin/Charts";
 import Table from "../../components/admin/DashboardTable";
 import { Skeleton } from "../../components/loader";
 import { useStatsQuery } from "../../redux/api/dashboardAPI";
-import { UserReducerInitialState } from "../../types/reudcer-types";
 import { getLastMonths } from "../../utils/features";
+import { UserReducerInitialState } from "../../types/reudcer-types";
 
 const userImg =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJxA5cTf-5dh5Eusm0puHbvAhOrCRPtckzjA&usqp";
 
-const { last12Months: months } = getLastMonths();
+const { last6Months: months } = getLastMonths();
 
 const Dashboard = () => {
   const { user } = useSelector(
@@ -148,7 +148,7 @@ const WidgetItem = ({
   <article className="widget">
     <div className="widget-info">
       <p>{heading}</p>
-      <h4>{amount ? `₹${value}` : value}</h4>
+      <h4>{amount ? `$${value}` : value}</h4>
       {percent > 0 ? (
         <span className="green">
           <HiTrendingUp /> +{`${percent > 10000 ? 9999 : percent}%`}

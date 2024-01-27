@@ -50,7 +50,7 @@ const Header = ({ user }: PropsType) => {
           </button>
 
           <dialog open={isOpen}>
-            <div>
+            <div className="user-options">
               {user.role === "admin" && (
                 <Link onClick={() => setIsOpen(false)} to={"/admin/dashboard"}>
                   Admin

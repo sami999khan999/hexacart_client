@@ -6,7 +6,7 @@ const allNumbers = "1234567890";
 const allSymbols = "!@#$%^&*()_+";
 
 const Coupon = () => {
-  const [size, setSize] = useState<number>(8);
+  const [size, setSize] = useState<number>(0);
   const [prefix, setPrefix] = useState<string>("");
   const [includeNumbers, setIncludeNumbers] = useState<boolean>(false);
   const [includeCharacters, setIncludeCharacters] = useState<boolean>(false);
@@ -20,7 +20,7 @@ const Coupon = () => {
     setIsCopied(true);
   };
 
-  const submitHandler = (e: FormEvent<HTMLFormElement>) => {
+  const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!includeNumbers && !includeCharacters && !includeSymbols)
