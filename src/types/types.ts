@@ -71,7 +71,7 @@ type LatestTransaction = {
   amount: number;
   discount: number;
   quantity: number;
-  states: string;
+  status: string;
 };
 
 export type Stats = {
