@@ -2,6 +2,8 @@
 
 HexaCart is a MEARN (MongoDB, Express.js, Angular, React, Node.js) project designed to [provide a brief description of the project].
 
+######
+
 ## Frontend
 
 The frontend of HexaCart is built with React and Vite.
