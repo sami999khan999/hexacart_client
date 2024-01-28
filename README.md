@@ -2,7 +2,7 @@
 
 HexaCart is a MEARN (MongoDB, Express.js, Angular, React, Node.js) project designed to [provide a brief description of the project].
 
-## Frontend
+# Frontend
 
 The frontend of HexaCart is built with React and Vite.
 
@@ -26,7 +26,7 @@ The frontend of HexaCart is built with React and Vite.
 - **TypeScript ESLint:** Linting utility for TypeScript. (`@typescript-eslint/eslint-plugin` v6.14.0, `@typescript-eslint/parser` v6.14.0)
 - **Vite:** Opinionated web dev build tool that serves your code via native ES modules. (`vite` v5.0.11)
 
-### Backend
+# Backend
 
 The backend of HexaCart is built with Node.js and Express.js.
 
