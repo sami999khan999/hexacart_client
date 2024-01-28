@@ -51,15 +51,15 @@ const App = () => {
     (state: { userReducer: UserReducerInitialState }) => state.userReducer
   );
 
+  console.log(user);
+
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
 
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
       if (user) {
         const data = await getUser(user.uid);
         dispatch(userExist(data.user));
-        // navigate("/");
       } else {
         dispatch(userNotExist());
       }
