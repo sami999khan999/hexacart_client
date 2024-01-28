@@ -51,8 +51,6 @@ const App = () => {
     (state: { userReducer: UserReducerInitialState }) => state.userReducer
   );
 
-  console.log(user);
-
   const dispatch = useDispatch();
 
   useEffect(() => {
