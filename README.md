@@ -30,7 +30,7 @@ The frontend of HexaCart is built with React and Vite.
 
 The backend of HexaCart is built with Node.js and Express.js.
 
-## Features
+# Features
 
 - **CORS:** Middleware for handling Cross-Origin Resource Sharing. (`cors` v2.8.5)
 - **Dotenv:** Load environment variables from a .env file. (`dotenv` v16.3.1)
