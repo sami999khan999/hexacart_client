@@ -67,8 +67,12 @@ const Customers = () => {
   const navigate = useNavigate();
 
   const deleteHandler = async (userId: string) => {
-    const res = await deleteUser({ userId, adminUserId: user?._id! });
-    responseToast(res, navigate, "");
+    if (user?.role === "admin") {
+      return;
+    } else {
+      const res = await deleteUser({ userId, adminUserId: user?._id! });
+      responseToast(res, navigate, "");
+    }
   };
 
   if (isError) {
