@@ -1,30 +1,60 @@
-# React + TypeScript + Vite
+# HexaCart Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+HexaCart is a MEARN (MongoDB, Express.js, Angular, React, Node.js) project designed for [provide a brief description of the project].
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Frontend](#frontend)
+  - [Introduction](#introduction)
+  - [Features](#features)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+    - [Configuration](#configuration)
+  - [Usage](#usage)
+  - [Dependencies](#dependencies)
+  - [Development](#development)
+  - [Contributing](#contributing)
+  - [License](#license)
 
-## Expanding the ESLint configuration
+- [Backend](#backend)
+  - [Introduction](#introduction-1)
+  - [Features](#features-1)
+  - [Getting Started](#getting-started-1)
+    - [Prerequisites](#prerequisites-1)
+    - [Installation](#installation-1)
+    - [Configuration](#configuration-1)
+  - [Usage](#usage-1)
+  - [Dependencies](#dependencies-1)
+  - [Development](#development-1)
+  - [Contributing](#contributing-1)
+  - [License](#license-1)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Frontend
 
-- Configure the top-level `parserOptions` property like this:
+### Introduction
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+The frontend of HexaCart is built with React and Vite. This section provides information about the frontend.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Features
+
+List the key features of the HexaCart frontend.
+
+- Feature 1
+- Feature 2
+- ...
+
+### Getting Started
+
+#### Prerequisites
+
+Ensure you have the following software installed:
+
+- Node.js
+
+#### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/your-username/hexacart-frontend.git
