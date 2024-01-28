@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 import { lazy, Suspense, useEffect } from "react";
 import Loader from "./components/loader";
 import Header from "./components/header";
@@ -47,12 +52,14 @@ const App = () => {
   );
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
       if (user) {
         const data = await getUser(user.uid);
         dispatch(userExist(data.user));
+        navigate("/");
       } else {
         dispatch(userNotExist());
       }
