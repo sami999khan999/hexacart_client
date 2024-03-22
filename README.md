@@ -46,16 +46,9 @@ The backend of HexaCart is built with Node.js and Express.js.
 
 ## Getting Started
 
-### Frontend
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/sami999khan999/hexacart_client
-
 ### Backend
 
-2. Clone the repository:
+Clone the repository:
 
    ```bash
     git clone https://github.com/sami999khan999/hexacart_server
